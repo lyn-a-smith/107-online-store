@@ -1,17 +1,21 @@
 import { useState } from "react";
 
-function QuantityPicker() {
+function QuantityPicker(props) {
     // const [state, setState] = useState(initialValue)
     const [quantity, setQuantity] = useState(1);
 
     function onDecrease() {
         console.log("decrease");
 
-        setQuantity(quantity - 1);}
+        setQuantity(quantity - 1);
+        props.onQuantityChange(quantity - 1); // Notify the parent component about the quantity change
+    }
 
     function onIncrease() {
         console.log("increase");
-        setQuantity(quantity + 1);}
+        setQuantity(quantity + 1);
+        props.onQuantityChange(quantity + 1); // Notify the parent component about the quantity change  
+    }
 
     return (
         <div>
