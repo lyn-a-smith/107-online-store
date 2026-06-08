@@ -1,8 +1,10 @@
+import { Link } from "react-router";
+
 import "./navbar.css";
 
 function Navbar() {
     return (
-    <nav className="navbar navbar-expand-lg bg-info-subtle">
+    <nav className="navbar navbar-expand-lg navbar-dark border-bottom border-secondary" style={{ backgroundColor: '#0a0a0a' }}>
         <div className="container-fluid">
             <a className="navbar-brand" href="#">
             Online-Store
@@ -21,22 +23,24 @@ function Navbar() {
             <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
                 <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="#">
-                    Home
-                </a>
+                    <Link className="nav-link" aria-current="page" to="/">
+                        Home
+                    </Link>
                 </li>
                 <li className="nav-item">
-                <a className="nav-link" href="#">
-                    About
-                </a>
+                    <Link className="nav-link" to="/about">
+                        About
+                    </Link>
                 </li>
                 <li className="nav-item">
-                <a className="nav-link" href="#">
-                    Contact
-                </a>
+                    <Link className="nav-link" to="/contact">
+                        Contact
+                    </Link>
                 </li>
                 <li className="nav-item">
-                <a className="nav-link">Catelog</a>
+                    <Link className="nav-link" to="/catalog">
+                        Catalog
+                    </Link>
                 </li>
             </ul>
             </div>

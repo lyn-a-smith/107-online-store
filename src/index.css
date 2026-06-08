@@ -1,0 +1,46 @@
+/* index.css */
+body {
+  background-color: #121212; /* Deep Black/Charcoal */
+  color: #e0e0e0; /* Silver/Light Gray */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff; /* Crisp white for headers */
+}
+
+/* Custom Burgundy Accents */
+.text-burgundy {
+  color: #800020 !important;
+}
+
+.bg-burgundy {
+  background-color: #800020 !important;
+  color: #ffffff;
+}
+
+/* Custom Burgundy Button */
+.btn-burgundy {
+  background-color: #800020;
+  color: #e0e0e0;
+  border: 1px solid #800020;
+  transition: all 0.3s ease;
+}
+
+.btn-burgundy:hover {
+  background-color: #5c0017;
+  color: #ffffff;
+  border-color: #5c0017;
+}
+
+/* Minimalist Card Styling */
+.card-custom {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  border-color: #800020;
+}
