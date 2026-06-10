@@ -12,7 +12,6 @@ import Footer from "./components/footer";
 import NavBar from "./components/NavBar";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import About2 from './pages/About2';
 
 function App() {
   return (
@@ -22,7 +21,7 @@ function App() {
       <main className="container py-4">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About2 />} />
+          <Route path="/about" element={<About />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/admin" element={<Admin />} />

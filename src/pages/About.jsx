@@ -1,4 +1,16 @@
+import { useState } from "react";
+
 function About() {
+  const [isEmailVisible, setIsEmailVisible] = useState(false);
+
+  function showEmail() {
+      setIsEmailVisible(true);
+  }
+
+  function hideEmail() {
+      setIsEmailVisible(false);
+  }
+
   return (
     <div className="container py-5">
         
@@ -55,6 +67,22 @@ function About() {
                         Our custom runs are strictly limited. When you step into our designs, you are wearing a unique piece of wearable art.
                     </p>
                 </div>
+            </div>
+        </div>
+
+        {/* Email Reveal Section */}
+        <div className="text-center mt-5 pt-5 border-top border-secondary">
+            <h2 className="fw-bold text-light mb-3">Reach Out</h2>
+            
+            { 
+                (isEmailVisible === true) 
+                ? <p className="fs-4 text-burgundy fw-bold">contact@customshoes.com</p> 
+                : <p className="text-secondary">Click the button below to reveal our contact email.</p> 
+            }
+           
+            <div className="mt-4">
+                <button className="btn btn-outline-secondary me-3" onClick={hideEmail}>Hide Email</button>
+                <button className="btn btn-burgundy" onClick={showEmail}>Show Email</button>
             </div>
         </div>
 
