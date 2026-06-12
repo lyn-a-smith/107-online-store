@@ -1,4 +1,6 @@
 // src/pages/Contact.jsx
+import { IconMailFast } from '@tabler/icons-react';
+
 function Contact() {
     return (
       <div className="container py-5 text-center">
@@ -20,7 +22,7 @@ function Contact() {
                         <label className="form-label text-light">Inquiry</label>
                         <textarea className="form-control bg-dark text-light border-secondary" rows="4" placeholder="Tell us about your custom design ideas..."></textarea>
                     </div>
-                    <button type="submit" className="btn btn-burgundy w-100 mt-2">Send Message</button>
+                    <button type="submit" className="btn btn-burgundy w-100 mt-2">Send Message   <IconMailFast stroke={2} /></button>
                 </form>
             </div>
         </div>

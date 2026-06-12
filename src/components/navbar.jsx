@@ -1,8 +1,14 @@
 import { Link } from "react-router";
 
+import { useState, useContext } from "react";
+import GlobalContext from "../state/globalContext";
+
+import { IconUserCircle, IconHome } from '@tabler/icons-react';
 import "./navbar.css";
 
 function Navbar() {
+    const user = useContext(GlobalContext).user
+
     return (
     <nav className="navbar navbar-expand-lg navbar-dark border-bottom border-secondary" style={{ backgroundColor: '#0a0a0a' }}>
         <div className="container-fluid">
@@ -24,7 +30,7 @@ function Navbar() {
             <ul className="navbar-nav">
                 <li className="nav-item">
                     <Link className="nav-link" aria-current="page" to="/">
-                        Home
+                        <IconHome stroke={2} /> Home
                     </Link>
                 </li>
                 <li className="nav-item">
@@ -46,9 +52,10 @@ function Navbar() {
                     <Link className="nav-link" to="/admin">
                         Admin
                     </Link>
-                </li>
+                </li>                    
             </ul>
             </div>
+            <div className="text-white"><IconUserCircle stroke={2} />  {user.name} - {user.cohort}</div>
         </div>
     </nav>
 

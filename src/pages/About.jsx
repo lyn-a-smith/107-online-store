@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import GlobalContext from "../state/globalContext";
 
 function About() {
   const [isEmailVisible, setIsEmailVisible] = useState(false);
+  const user = useContext(GlobalContext).user
 
   function showEmail() {
       setIsEmailVisible(true);
@@ -84,6 +86,10 @@ function About() {
                 <button className="btn btn-outline-secondary me-3" onClick={hideEmail}>Hide Email</button>
                 <button className="btn btn-burgundy" onClick={showEmail}>Show Email</button>
             </div>
+        </div>
+
+        <div>
+            <h2> I am {user.name}</h2>
         </div>
 
     </div>

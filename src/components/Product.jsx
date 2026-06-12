@@ -1,6 +1,8 @@
 import { useState } from "react";
 import QuantityPicker from "./QuantityPicker";
 
+import { IconShoppingCartPlus } from '@tabler/icons-react';
+
 function Product({ data }) {
     const [quantity, setQuantity] = useState(1);
 
@@ -41,7 +43,7 @@ function Product({ data }) {
                 </div>
 
                 <button className="btn btn-burgundy mt-auto w-100">
-                    Add to Cart
+                    Add to Cart  <IconShoppingCartPlus stroke={2} />
                 </button>
             </div>
         </div>
