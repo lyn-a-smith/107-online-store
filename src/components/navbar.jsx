@@ -3,14 +3,25 @@ import { Link } from "react-router";
 import { useState, useContext } from "react";
 import GlobalContext from "../state/globalContext";
 
-import { IconUserCircle, IconHome } from '@tabler/icons-react';
+import { IconUserCircle, IconHome, IconShoppingCart } from '@tabler/icons-react';
 import "./navbar.css";
 
 function Navbar() {
     const user = useContext(GlobalContext).user
 
+    const cart = useContext(GlobalContext).cart
+
+    function getTotalItems() {
+        let total = 0;
+        for (let i = 0; i < cart.length; i++) {
+            total = total + cart[i].quantity;
+        }
+        return total;
+    }
+
+
     return (
-    <nav className="navbar navbar-expand-lg navbar-dark border-bottom border-secondary" style={{ backgroundColor: '#0a0a0a' }}>
+    <nav className="navbar navbar-expand-lg navbar-dark border-bottom border-secondary sticky-top" style={{ backgroundColor: '#0a0a0a' }}>
         <div className="container-fluid">
             <a className="navbar-brand" href="#">
             Online-Store
@@ -55,7 +66,20 @@ function Navbar() {
                 </li>                    
             </ul>
             </div>
-            <div className="text-white"><IconUserCircle stroke={2} />  {user.name} - {user.cohort}</div>
+            <div className="d-flex gap-4 align-items-center">
+                <div className="text-white">
+                    <IconUserCircle stroke={2} />  {user.name} - {user.cohort}
+                </div>
+                <div> 
+                    <Link className="btn btn-burgundy text-decoration-none text-white position-relative" to="/cart">
+                    
+                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-white text-burgundy">{getTotalItems()}</span>
+                    
+                    <IconShoppingCart stroke={2} /> Cart 
+    
+                    </Link>
+                </div>
+            </div>
         </div>
     </nav>
 

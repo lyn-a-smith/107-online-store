@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+
+import GlobalContext from "../state/globalContext";
 import QuantityPicker from "./QuantityPicker";
 
 import { IconShoppingCartPlus } from '@tabler/icons-react';
 
 function Product({ data }) {
     const [quantity, setQuantity] = useState(1);
+
+    const globalAdd = useContext(GlobalContext).addProductToCart
+
+    function onAdd() {
+        let fixedProduct = {...data}
+        fixedProduct.quantity = quantity
+        globalAdd(fixedProduct)
+    }
 
     function handleQuantityChange(qty) {
         // Handle quantity change logic here
@@ -42,7 +52,7 @@ function Product({ data }) {
                     <QuantityPicker onQuantityChange={handleQuantityChange} />
                 </div>
 
-                <button className="btn btn-burgundy mt-auto w-100">
+                <button className="btn btn-burgundy mt-auto w-100" onClick={onAdd}>
                     Add to Cart  <IconShoppingCartPlus stroke={2} />
                 </button>
             </div>
