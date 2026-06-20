@@ -88,9 +88,9 @@ function About() {
             </div>
         </div>
 
-        <div>
+        {/* <div>
             <h2> I am {user.name}</h2>
-        </div>
+        </div> */}
 
     </div>
   );
